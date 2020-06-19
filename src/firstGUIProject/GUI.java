@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -27,17 +28,15 @@ public class GUI {
 			
 			
 
-
-	       
-	       JButton button1 = new JButton("Choose File 1");
-	       JButton button2 = new JButton("Choose File 2");
-	       
-	       
-	       
-	       File file1 = new File("C:\\path\\1.txt"); 
-	        FileInputStream fileStream1 = new FileInputStream(file); 
-	        InputStreamReader input1 = new InputStreamReader(fileStream); 
-	        BufferedReader reader1 = new BufferedReader(input); 
+			JFileChooser j1 = new JFileChooser();
+			j1.showSaveDialog(null);
+			JFileChooser j2 = new JFileChooser();
+			j2.showSaveDialog(null);
+			File file1 = j1.getSelectedFile();
+			File file2 = j2.getSelectedFile();
+	        FileInputStream fileStream1 = new FileInputStream(file1); 
+	        InputStreamReader input1 = new InputStreamReader(fileStream1); 
+	        BufferedReader reader1 = new BufferedReader(input1); 
 	          
 	        String line1; 
 	          
@@ -53,10 +52,9 @@ public class GUI {
 	          
 	        System.out.println("Total word count in file 1= " + wordCountF1); 
 	        
-		       File file2 = new File("C:\\path\\2.txt"); 
-		        FileInputStream fileStream2 = new FileInputStream(file); 
-		        InputStreamReader input2 = new InputStreamReader(fileStream); 
-		        BufferedReader reader2 = new BufferedReader(input); 
+		        FileInputStream fileStream2 = new FileInputStream(file2); 
+		        InputStreamReader input2 = new InputStreamReader(fileStream2); 
+		        BufferedReader reader2 = new BufferedReader(input2); 
 		          
 		        String line2; 
 		          
@@ -72,8 +70,7 @@ public class GUI {
 		          
 		        System.out.println("Total word count in file 2= " + wordCountF2); 
 	       
-	       frame.getContentPane().add(button1); // Adds Button to content pane of frame
-	       frame.getContentPane().add(button2); // Adds Button to content pane of frame
+	     
 	       frame.setVisible(true);
 	    }
 
