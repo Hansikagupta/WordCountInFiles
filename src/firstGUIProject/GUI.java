@@ -1,16 +1,22 @@
 package firstGUIProject;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GUI {
 
-	public GUI() {
-		// TODO Auto-generated method stub
-		JFrame frame = new JFrame();
-		JPanel panel1 = new JPanel();
-		JPanel panel2 = new JPanel();
 
-	}
+	
+	  public static void main(String args[]){
+	       JFrame frame = new JFrame("My First GUI");
+			JPanel panel1 = new JPanel();
+
+	       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	       frame.setSize(300,300);
+	       JButton button = new JButton("Press");
+	       frame.getContentPane().add(button); // Adds Button to content pane of frame
+	       frame.setVisible(true);
+	    }
 
 }
